@@ -4,7 +4,7 @@ import { GET_FILM_BY_ID } from "../../API";
 import Layout from "../Layout";
 import { useEffect, useState } from "react";
 import Loading from "../Loading";
-import { useAppContext } from "../../context/favoritesContext";
+import { useAppContext } from "../../context/FavoritesContext";
 
 type Props = {
   imdID: string;
