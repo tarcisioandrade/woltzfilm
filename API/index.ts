@@ -1,7 +1,7 @@
 import useSWR from "swr";
 import { ApiResponse, Film } from "../types/ApiResponse";
 
-const basePath = `http://www.omdbapi.com/?apikey=${process.env.NEXT_PUBLIC_OMDB_API_KEY}&`;
+const basePath = `https://www.omdbapi.com/?apikey=${process.env.NEXT_PUBLIC_OMDB_API_KEY}&`;
 
 const fetcher = (...args: [string]) => fetch(...args).then((res) => res.json());
 type ResponseData = {
