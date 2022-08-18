@@ -10,10 +10,7 @@ const FilmNotFound = () => {
         <div>
           <MonitorPlay className="mx-auto" size={200} />
         </div>
-        <p>
-          Unable to find what you’re looking for.
-          <br /> Please try another search.
-        </p>
+        <p>Unable to find what you’re looking for.</p>
       </div>
     </div>
   );

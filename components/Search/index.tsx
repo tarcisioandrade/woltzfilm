@@ -1,5 +1,4 @@
-import { MagnifyingGlass } from "phosphor-react";
-import { FormEvent, KeyboardEvent, useState } from "react";
+import { FormEvent, useState } from "react";
 
 type Props = {
   onClick: (newName: string) => void;
@@ -15,10 +14,9 @@ const SearchInput = ({ onClick }: Props) => {
 
   return (
     <form
-      className="flex items-center gap-2 pl-2 h-10 rounded-md bg-blue-900/40 w-[800px] mx-auto mt-[-20px] text-lg"
+      className="flex items-center gap-2 pl-2 h-10 rounded-md bg-blue-900/40 max-w-[800px] mx-auto mt-[-20px] text-lg"
       onSubmit={handleSubmit}
     >
-      <MagnifyingGlass size={24} />
       <input
         className="bg-transparent outline-none border-none w-full"
         type="text"
