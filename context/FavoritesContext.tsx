@@ -38,7 +38,7 @@ export const AppFavContext = ({ children }: Props) => {
       const filmFavorites = JSON.parse(
         localStorage.getItem("filmID") as string
       );
-      setFavorites(filmFavorites);
+      setFavorites(filmFavorites || []);
     }
   }, []);
 

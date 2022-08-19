@@ -1,10 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
-import { Heart, Star, X } from "phosphor-react";
+import { Heart, Star } from "phosphor-react";
 import { GET_FILM_BY_ID } from "../../API";
-import Layout from "../Layout";
-import { useEffect, useState } from "react";
-import Loading from "../Loading";
 import { useAppContext } from "../../context/FavoritesContext";
+import { useEffect } from "react";
+import Layout from "../Layout";
+import Loading from "../Loading";
 
 type Props = {
   imdID: string;
@@ -20,7 +20,6 @@ const ModalFilm = ({ imdID, setActive, isActive, reUpdate }: Props) => {
   useEffect(() => {
     const outSideClick = (e: any) => {
       if (e.target.closest(".boxCard") && !e.target.closest(".card")) {
-        console.log("oi");
         setActive();
       }
     };
