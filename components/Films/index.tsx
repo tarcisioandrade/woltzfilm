@@ -17,7 +17,7 @@ const Films = ({ name, setFavorite }: Props) => {
   const [page, setPage] = useState(1);
   const handleActive = () => setModalActive(!modalActive);
 
-  const { data } = GET_DEFAULT_FILM_BY_TITLE(
+  const { data, loading } = GET_DEFAULT_FILM_BY_TITLE(
     name == "" ? "Transformers" : name,
     page
   );
@@ -34,11 +34,17 @@ const Films = ({ name, setFavorite }: Props) => {
   };
   const totalPages = Math.ceil(+data?.totalResults / 10);
 
+  const skeleton = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
+
   if (data?.Response === "False") return <FilmNotFound />;
   return (
     <>
       <div className="min-h-[824px]">
         <div className="grid grid-cols-1 gap-6 my-10 sm:grid-cols-2  lg:grid-cols-3 xl:grid-cols-5">
+          {loading &&
+            skeleton.map((_, i) => (
+              <div key={i} className="w-full h-[400px] bg-slate-800" />
+            ))}
           {data &&
             data.Search?.map((data) => (
               <div
